@@ -64,7 +64,7 @@
     //   do         - Cloudflare Durable Objects（需下方 durable_objects）
     //   mysql      - 外部 MySQL（需 MYSQL_URLS 或 MYSQL_HOST 等，仅 Node 运行时）
     // 说明：mysql 仅在配置了连接信息时才参与 auto 探测，避免无谓的 TCP 建连。
-    "DB_DRIVER": "auto",
+    "DB_DRIVER": "kv",
 
     // 敏感字段落盘算法（默认 none：不加密；与 DB_DRIVER/DB_FORMAT 正交）：
     //   none（默认）              - 不加密，敏感字段明文落盘
@@ -85,7 +85,7 @@
     // ── 安全鉴权（推荐以 Secret 类型配置，见 .dev.vars.example）──────────
     //
     // JWT 签名密钥（>=16 字符，兼作可选的字段加密密钥与定时任务鉴权）
-    // "JWT_SECRET": "",
+    "JWT_SECRET": "de03749f6712ba6fdf03025",
     //
     // 跳过安装向导，自动以该密码初始化 admin
     // "ADMIN_PASS": "",
